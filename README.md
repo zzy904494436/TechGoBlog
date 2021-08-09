@@ -1,2 +1,3 @@
 # TechGoBlog
 go！fighting！
+
