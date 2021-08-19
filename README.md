@@ -1,3 +1,3 @@
 # TechGoBlog
-go！fighting！
+go！fighting！自我分析!
 
