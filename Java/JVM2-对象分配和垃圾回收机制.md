@@ -187,6 +187,10 @@ MinorGC/YoungGC   					MajorGC/Old GC
 
 对象的移动 会耗时（实际地址的移动）；可达性分析效率很高，
 
+整理总结图：
+
+![JVM内存模型-King老师修改版本](/Users/alex/Alex/everyday/TechGoBlog/source/img/JVM内存模型-King老师修改版本.jpg)
+
 ---
 
 下节 细讲**CMS** ，JVM调优，JDK发展

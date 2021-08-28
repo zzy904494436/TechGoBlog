@@ -14,7 +14,7 @@
 -XX:+UseSerialGC
 ```
 
-单线程 ----> 多线程		跨越
+单线程 ----> 多线程 --->  跨越
 
 ### Parallel Scavenge 和 Parallel Old (PS组合)- 多线程
 
@@ -213,7 +213,61 @@ javap -v Person.class  查看
 
 char数组 --- byte数组(JDK1.9)
 
-final修饰 String类 和 char[] ,不可变.
+final修饰 String类 和 char[] ,不可变.如果String可变,不安全问题很大,
+
+那么String a = "a"  + "b"; // 此时经常变,那么内部是创建了新对象,
+
+StringBuffer StringBuilder 之类的又是如何实现的呢? 以下要详细讲解一下原理.
+
+1. String str = "abc"; // 字符串常量创建“abc” 把引用返回 ,池化技术,可复用.
+2. String str = new String("abc"); // 字面量abc, 在常量池中创建常量"abc",调用new 创建String对象,并引用常量池中的字符串"abc",返回String对象的引用.多一步,所以不推荐.
+3. 对象中的属性,对象在堆中, 对象的 属性 (也在堆中) 引用 指向字符串常量池.
+4. String str2 = "a"  + "b" + "c"; // 编译器 "abc"
+5. 循环,循环很大的话,用了StringBuilder
+6. intern() - 复用常量池中的值 
+
+```java
+String a = new String("king").intern(); 
+String b = new String("king").intern();
+a == b; //返回常量池地址
+String c = new String("king");
+String d = new String("king");
+c != d;	//返回对象地址
+```
 
 
+
+---
+
+### JDK发展
+
+Java 7 ---  nio ,多线程 fork-join等
+
+**Java 8** --- **LTS版本** ---lamada表达式,并发安全工具类,等
+
+Java 9 --- CMS垃圾回收器进入废弃倒计时,G1称为默认垃圾回收器
+
+Java 10 --- JIT编译器(graal)
+
+**Java 11** ---  **LTS版本** --- **ZGC**长期稳定版本,
+
+Java 12 ---优化 ,新增垃圾回收器
+
+Java 13 --- ZGC 提升空间
+
+Java 14 --- 正式移除 CMS, ZGC开启跨平台 ,unsafe feibudiao
+
+发展方向就是尽量减少 stop the world! 
+
+---
+
+#### 方法区会GC吗?
+
+会,MetaSpace 回收,类太少
+
+#### 持久代 == 永久代 ===> JDK1.8后元空间
+
+#### 初始标记 只标记 GC Roots 直接关联的对象吗?  是的
+
+#### 双亲委派??? 没有回答
 
