@@ -30,7 +30,7 @@ A 在常量池 引用 B B还未加载：符号引用，符号：字面量   sun.
 
 对象
 
-<img src="/Users/alex/Alex/everyday/TechGoBlog/source/img/JVM2_对象.png" alt="JVM2_对象" style="zoom:50%;" />
+<img src="/Users/alex/Alex/everyday/TechGoBlog/Java/JVM/resource/JVM2_对象.png" alt="JVM2_对象" style="zoom:50%;" />
 
 堆中 对象 的 类型指针 指向 方法区 的 类 
 
@@ -125,7 +125,7 @@ Java === 自动 不用管 空间的释放
 
 绝大多数代码 解释执行 
 
-<img src="/Users/alex/Alex/everyday/TechGoBlog/source/img/JVM2-对象分配.png" alt="JVM2-对象分配" style="zoom:50%;" />
+<img src="/Users/alex/Alex/everyday/TechGoBlog/Java/JVM/resource/JVM2-对象分配.png" alt="JVM2-对象分配" style="zoom:50%;" />
 
 #### 逃逸分析
 
@@ -161,7 +161,7 @@ MinorGC/YoungGC   					MajorGC/Old GC
 
 ​							FullGC
 
-<img src="/Users/alex/Desktop/JVM2-GC.png" alt="JVM2-GC" style="zoom:50%;" />
+<img src="/Users/alex/Alex/everyday/TechGoBlog/Java/JVM/resource/JVM2-GC.png" alt="JVM2-GC" style="zoom:50%;" />
 
 #### 1. 复制算法
 
@@ -189,7 +189,7 @@ MinorGC/YoungGC   					MajorGC/Old GC
 
 整理总结图：
 
-![JVM内存模型-King老师修改版本](/Users/alex/Alex/everyday/TechGoBlog/source/img/JVM内存模型-King老师修改版本.jpg)
+![JVM内存模型-King老师修改版本](/Users/alex/Alex/everyday/TechGoBlog/Java/JVM/resource/JVM内存模型-King老师修改版本.jpg)
 
 ---
 

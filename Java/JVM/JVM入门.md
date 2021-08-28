@@ -71,7 +71,7 @@ class规范,
 
 **永久代**,**元空间**是**HotSpot**里的称呼而已; 在JVM规范里都统一称为**方法区**,hotspot只是利用永久代和元空间实现了方法区而已
 
-<img src="/Users/alex/Alex/md_space/TechGoBlog/source/img/JVM1_运行时数据区.png" alt="JVM1_运行时数据区" style="zoom: 50%;" />
+<img src="/Users/alex/Alex/everyday/TechGoBlog/Java/JVM/resource/JVM1_运行时数据区.png" alt="JVM1_运行时数据区" style="zoom: 50%;" />
 
 除了运行时数据区(被虚拟化的内存),还有一块直接内存可以被jvm使用,
 
@@ -91,7 +91,7 @@ main方法-->调用--> A方法-->调用--> B方法-->调用--> C方法
 
 此时如图
 
-<img src="/Users/alex/Alex/md_space/TechGoBlog/source/img/JVM1_栈帧.png" style="zoom:50%;" />
+<img src="/Users/alex/Alex/everyday/TechGoBlog/Java/JVM/resource/JVM1_栈帧.png" style="zoom:50%;" />
 
 #### 参数
 
@@ -99,7 +99,7 @@ main方法-->调用--> A方法-->调用--> B方法-->调用--> C方法
 
 -Xss 可以调整栈的大小:默认1024KB,如图
 
-<img src="/Users/alex/Alex/md_space/TechGoBlog/source/img/JVM1_指令Xss.png" style="zoom:50%;" />
+<img src="/Users/alex/Alex/everyday/TechGoBlog/Java/JVM/resource/JVM1_指令Xss.png" style="zoom:50%;" />
 
 一般情况下1M,如果A方法调用A方法本身,死递归,无限A栈帧压入,抛出栈溢出异常,虚拟机栈不可以动态调整,爆掉了,(循环几百次-上千次)
 
@@ -109,7 +109,7 @@ main方法-->调用--> A方法-->调用--> B方法-->调用--> C方法
 
 #### 虚拟机栈的栈帧里面都有什么?栈帧与Java运行
 
-<img src="/Users/alex/Alex/md_space/TechGoBlog/source/img/JVM1_栈帧2.png" alt="JVM1_栈帧2" style="zoom:50%;" />
+<img src="/Users/alex/Alex/everyday/TechGoBlog/Java/JVM/resource/JVM1_栈帧2.png" alt="JVM1_栈帧2" style="zoom:50%;" />
 
 **虚拟机栈** 包含栈帧,**栈帧**包含以下四个
 
@@ -127,13 +127,13 @@ main方法-->调用--> A方法-->调用--> B方法-->调用--> C方法
 
    
 
-   <img src="/Users/alex/Alex/md_space/TechGoBlog/source/img/JVM1_栈帧3.png" alt="JVM1_栈帧3" style="zoom:50%;" />
+   <img src="/Users/alex/Alex/everyday/TechGoBlog/Java/JVM/resource/JVM1_栈帧3.png" alt="JVM1_栈帧3" style="zoom:50%;" />
 
 线程1 运行, main方法-work方法(一个方法对应一个栈帧)
 
 分析work方法的栈帧,
 
-<img src="/Users/alex/Alex/md_space/TechGoBlog/source/img/JVM1_work方法.png" alt="JVM1_work方法" style="zoom:50%;" />
+<img src="/Users/alex/Alex/everyday/TechGoBlog/Java/JVM/resource/JVM1_work方法.png" alt="JVM1_work方法" style="zoom:50%;" />
 
 字节码---class
 
@@ -145,7 +145,7 @@ javap 反汇编工具
 
 展示字节码
 
-<img src="/Users/alex/Alex/md_space/TechGoBlog/source/img/JVM1_javap.png" alt="JVM1_javap" style="zoom:50%;" />
+<img src="/Users/alex/Alex/everyday/TechGoBlog/Java/JVM/resource/JVM1_javap.png" alt="JVM1_javap" style="zoom:50%;" />
 
 字节码地址 0 - 12 ; 对应程序计数器;
 
@@ -161,7 +161,7 @@ javap 反汇编工具
 
 1:istore_1   操作数栈顶的数值 压入 局部变量表1的位置
 
-<img src="/Users/alex/Alex/md_space/TechGoBlog/source/img/JVM1_work栈帧演示1.png" alt="JVM1_work栈帧演示1" style="zoom:50%;" />
+<img src="/Users/alex/Alex/everyday/TechGoBlog/Java/JVM/resource/JVM1_work栈帧演示1.png" alt="JVM1_work栈帧演示1" style="zoom:50%;" />
 
 ```int y = 2;```
 
@@ -285,7 +285,7 @@ ByteBuffer一个线程不断检查内存问题,所有不会造成内存泄露.
 
 ### JVM整体内存结构
 
-<img src="/Users/alex/Alex/md_space/TechGoBlog/source/img/JVM1_整体内存图.png" alt="JVM1_整体内存图" style="zoom:50%;" />
+<img src="/Users/alex/Alex/everyday/TechGoBlog/Java/JVM/resource/JVM1_整体内存图.png" alt="JVM1_整体内存图" style="zoom:50%;" />
 
 ### 用代码深入理解到1010
 
@@ -309,7 +309,7 @@ jinfo -flags 10004  //进程默认参数
 
 5. 创建对象在堆中,引用在栈中;不断重复创建对象,执行方法,
 
-<img src="/Users/alex/Alex/md_space/TechGoBlog/source/img/JVM1_深入理解1.png" alt="JVM1_深入理解1" style="zoom:50%;" />
+<img src="/Users/alex/Alex/everyday/TechGoBlog/Java/JVM/resource/JVM1_深入理解1.png" alt="JVM1_深入理解1" style="zoom:50%;" />
 
 ### 堆空间分代划分
 
@@ -446,7 +446,7 @@ JVM虚拟机规范,没规定.
 
 
 
-<img src="/Users/alex/Alex/md_space/TechGoBlog/source/img/JVM1_作业.png" alt="JVM1_作业" style="zoom:67%;" />
+<img src="/Users/alex/Alex/everyday/TechGoBlog/Java/JVM/resource/JVM1_作业.png" alt="JVM1_作业" style="zoom:67%;" />
 
 ---
 

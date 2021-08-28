@@ -2,13 +2,13 @@
 
 ## 常用的垃圾回收器(JDK-1.8)
 
-<img src="/Users/alex/Alex/md_space/TechGoBlog/source/img/JVM3-GC分类图(基于JDK1.8).png" alt="JVM3-GC分类图(基于JDK1.8)" style="zoom:50%;" />
+<img src="/Users/alex/Alex/everyday/TechGoBlog/Java/JVM/resource/JVM3-GC分类图(基于JDK1.8).png" alt="JVM3-GC分类图(基于JDK1.8)" style="zoom:50%;" />
 
 ### 早期 : Serial 和 SerialOld  - 单线程
 
 早期,JVM堆空间很小, 垃圾回收要暂停所有程序,
 
-<img src="/Users/alex/Alex/md_space/TechGoBlog/source/img/JVM3-GC早期.png" alt="JVM3-GC早期" style="zoom:50%;" />
+<img src="/Users/alex/Alex/everyday/TechGoBlog/Java/JVM/resource/JVM3-GC早期.png" alt="JVM3-GC早期" style="zoom:50%;" />
 
 ```JVM
 -XX:+UseSerialGC
@@ -69,7 +69,7 @@ CMS回收老年代,所以搭配了一个**ParNew**(多线程)延续了**Serial**
 
 ---
 
-<img src="/Users/alex/Alex/md_space/TechGoBlog/source/img/JVM3-CMS流程图.png" alt="JVM3-CMS流程图" style="zoom:50%;" />
+<img src="/Users/alex/Alex/everyday/TechGoBlog/Java/JVM/resource/JVM3-CMS流程图.png" alt="JVM3-CMS流程图" style="zoom:50%;" />
 
 ### 初始标记
 
@@ -135,7 +135,7 @@ Card Table:
 
 打印日志: -XX: +PrintGCDetails 
 
-<img src="/Users/alex/Alex/md_space/TechGoBlog/source/img/JVM3-CMS日志.png" alt="JVM3-CMS日志" style="zoom:50%;" />
+<img src="/Users/alex/Alex/everyday/TechGoBlog/Java/JVM/resource/JVM3-CMS日志.png" alt="JVM3-CMS日志" style="zoom:50%;" />
 
 初始标记 -> 并发标记 -> 预处理 -> 可中断的并发预处理 -> 重新标记 -> 并发清理 -> 重置线程
 
@@ -189,7 +189,7 @@ CardTable是一个数组[],每一张卡512B,
 
 当有跨代引用,用dirty标记,下一次扫描新生代和老年代内的dirty区域就好了
 
-<img src="/Users/alex/Alex/md_space/TechGoBlog/source/img/JVM3-CardTable避免全堆扫瞄.png" alt="JVM3-CardTable避免全堆扫瞄" style="zoom:50%;" />
+<img src="/Users/alex/Alex/everyday/TechGoBlog/Java/JVM/resource/JVM3-CardTable避免全堆扫瞄.png" alt="JVM3-CardTable避免全堆扫瞄" style="zoom:50%;" />
 
 ---
 

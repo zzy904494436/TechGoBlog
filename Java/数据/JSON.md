@@ -90,7 +90,7 @@ JsonPrimitive = Object 基本类型
 
 #### 解析流程
 
-<img src="/Users/alex/Alex/md_space/TechGoBlog/source/json/JSON-解析流程.png" alt="JSON-解析流程" style="zoom:50%;" />
+<img src="/Users/alex/Alex/everyday/TechGoBlog/Java/数据/resource/JSON-解析流程.png" alt="JSON-解析流程" style="zoom:50%;" />
 
 #### Json里的适配器模式 
 
